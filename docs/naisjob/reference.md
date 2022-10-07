@@ -3704,7 +3704,7 @@ Required: `false`<br />
     ```
 
 ## resources
-When Containers have [resource requests](http://kubernetes.io/docs/user-guide/compute-resources/) specified, the Kubernetes scheduler can make better decisions about which nodes to place pods on.
+When Containers have [resource requests](http://kubernetes.io/docs/user-guide/compute-resources/) specified, the Kubernetes scheduler can make better decisions about which nodes to place pods on. 
 
 Type: `object`<br />
 Required: `false`<br />
@@ -3822,7 +3822,7 @@ Allowed values: `Never`, `OnFailure`<br />
     ```
 
 ## schedule
-The [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running the Naisjob. If not specified, the Naisjob will be run as a one-shot Job.
+The [Cron](https://en.wikipedia.org/wiki/Cron) schedule for running the Naisjob. If not specified, the Naisjob will be run as a one-shot Job. All jobs in gcp run with UTC time zone.
 
 Type: `string`<br />
 Required: `false`<br />
