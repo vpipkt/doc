@@ -4,13 +4,27 @@ description: Services and addons to support authentication (AuthN) & authorizati
 
 # Authentication and Authorization
 
-## Introduction to OAuth 2.0 / OpenID Connect
-
 [OpenID Connect (OIDC)](concepts/protocols.md#openid-connect) and [OAuth 2.0](concepts/protocols.md#oauth-20) are the preferred specifications to provide end user authentication and ensure secure service-to-service communication for applications running on the platform.
+In short, OIDC is used to delegate end user authentication to a third party, while the OAuth 2.0 protocol can provide signed [tokens](concepts/tokens.md) for machine-to-machine (M2M) communication.
+The token-based architecture enabled application to implement the [zero-trust principles](../../appendix/zero-trust.md).
 
-In short, OpenID Connect is used to delegate end user authentication to a third party, while the OAuth 2.0 protocol can provide signed [tokens](concepts/tokens.md) for service-to-service communication.
+NAIS provides mechanisms to provision services and integrations with different [_identity providers_](concepts/actors.md#identity-provider) that your applications will use to implement OIDC or OAuth 2.0.
 
-See the [concepts](concepts/README.md) pages for an introduction to basic concepts and terms that are referred to throughout this documentation.
+## Overview
+
+In NAV, we separate between three types of users;
+
+1. _citizens_; the users that visit us at <https://www.nav.no>
+2. _employees_; the users that work at the various NAV offices throughout Norway
+3. _machine users_; the applications that run without any end-user interactions
+
+Depending on the types of users your application targets, you will need to interact with different identity providers.
+
+// TODO: mermaid flowcharts and diagrams
+
+// TODO: overview/table of identity providers and their intended usage
+
+// TODO: simplify quickstart, fewer links, use grid cards
 
 ## Quickstart: How do I ...?
 
@@ -35,7 +49,7 @@ The application receives requests from other [clients](concepts/actors.md#client
 initiated by an end user.
 
 The application performs requests to other downstream APIs on behalf of this end user. In order to maintain
-the [zero trust principles](../../appendix/zero-trust.md) we must acquire new tokens for each unique downstream API.
+the zero-trust principles we must acquire new tokens for each unique downstream API.
 The new tokens should:
 
 1. Propagate the original end user's identity
